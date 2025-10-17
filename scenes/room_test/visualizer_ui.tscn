@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://djya21tijqj7m"]
+
+[ext_resource type="Script" uid="uid://bslduhw4i0oie" path="res://scenes/room_test/visualizer_ui.gd" id="1_lqhew"]
+
+[node name="VisualizerUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_lqhew")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Step" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Step"
+
+[node name="Complete" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Run to completion"
+
+[node name="Generate" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Generate"
+
+[node name="Message" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+text = "Message"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Step" to="." method="_on_step_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Complete" to="." method="_on_complete_pressed"]
+[connection signal="pressed" from="VBoxContainer/Generate" to="." method="_on_generate_pressed"]

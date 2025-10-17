@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="KeySet" load_steps=2 format=3 uid="uid://bl2mcvnkm8yap"]
+
+[ext_resource type="Script" uid="uid://dcvx14jikf5w0" path="res://addons/proc_mv/key_set.gd" id="1_ow4cf"]
+
+[resource]
+script = ExtResource("1_ow4cf")
+keys = Array[StringName]([&"neutral", &"dash", &"double_jump", &"super_jump", &"dive", &"glide", &"slide"])
+metadata/_custom_type_script = "uid://dcvx14jikf5w0"

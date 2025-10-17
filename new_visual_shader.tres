@@ -1,0 +1,26 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://cm3s5e1gs0kyt"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_7bnls"]
+input_name = "normal"
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+
+void fragment() {
+// Input:2
+	vec3 n_out2p0 = NORMAL;
+
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+
+}
+"
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_7bnls")
+nodes/fragment/2/position = Vector2(-298.191, 223.016)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)

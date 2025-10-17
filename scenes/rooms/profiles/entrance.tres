@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="RoomProfile" load_steps=5 format=3 uid="uid://cypt6c4xc5nul"]
+
+[ext_resource type="Script" uid="uid://dboui063mniml" path="res://scenes/room_test/edge_profile.gd" id="1_0hs1b"]
+[ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scenes/room_test/room_profile.gd" id="2_ee8h8"]
+[ext_resource type="Resource" uid="uid://bl2mcvnkm8yap" path="res://resources/key_set.tres" id="2_w5jq7"]
+
+[sub_resource type="Resource" id="Resource_ee8h8"]
+script = ExtResource("1_0hs1b")
+side = 0
+position = Vector2i(1, 2)
+key_choices = Array[StringName]([&"neutral"])
+optional = false
+
+[resource]
+script = ExtResource("2_ee8h8")
+key_set = ExtResource("2_w5jq7")
+size = Vector2i(2, 3)
+edges = Array[ExtResource("1_0hs1b")]([SubResource("Resource_ee8h8")])
+metadata/_custom_type_script = "uid://ca2dfl5s0wo5o"

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="KeyOrdering" load_steps=3 format=3 uid="uid://d34810v8glq1l"]
+
+[ext_resource type="Script" uid="uid://ceuswx371446h" path="res://scripts/key_ordering.gd" id="1_3avjk"]
+[ext_resource type="Resource" uid="uid://bl2mcvnkm8yap" path="res://resources/key_set.tres" id="1_3psx8"]
+
+[resource]
+script = ExtResource("1_3avjk")
+key_set = ExtResource("1_3psx8")
+follows = Dictionary[StringName, Array]({
+&"double_jump": [&"super_jump"],
+&"neutral": [&"double_jump", &"slide", &"dive"]
+})
+starting_key = &"neutral"
+scroll_offset = Vector2(0, 0)
+nodes/0/position = Vector2(-280, 20)
+nodes/0/key = &"neutral"
+connections/0 = [1, 2, 4]
+nodes/1/position = Vector2(60, 20)
+nodes/1/key = &"double_jump"
+connections/1 = [3]
+nodes/2/position = Vector2(60, 120)
+nodes/2/key = &"slide"
+connections/2 = []
+nodes/3/position = Vector2(360, 20)
+nodes/3/key = &"super_jump"
+connections/3 = []
+nodes/4/position = Vector2(60, 220)
+nodes/4/key = &"dive"
+connections/4 = []

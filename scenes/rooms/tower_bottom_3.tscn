@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://61ousdgwgbu0"]
+
+[ext_resource type="Script" uid="uid://t0mja7ora1v8" path="res://addons/proc_mv/room_profile/room_instance.gd" id="1_1vjwy"]
+[ext_resource type="Script" uid="uid://dboui063mniml" path="res://scenes/room_test/edge_profile.gd" id="2_q6wys"]
+[ext_resource type="Resource" uid="uid://bl2mcvnkm8yap" path="res://resources/key_set.tres" id="3_nk5h4"]
+[ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scenes/room_test/room_profile.gd" id="4_krwkf"]
+
+[sub_resource type="Resource" id="Resource_nyaqa"]
+script = ExtResource("2_q6wys")
+side = 2
+position = Vector2i(0, 2)
+key_choices = Array[StringName]([&"neutral", &"dash", &"double_jump", &"super_jump", &"dive", &"glide", &"slide"])
+optional = true
+
+[sub_resource type="Resource" id="Resource_a5mlq"]
+script = ExtResource("2_q6wys")
+side = 0
+position = Vector2i(0, 2)
+key_choices = Array[StringName]([&"neutral", &"dash", &"double_jump", &"super_jump", &"dive", &"glide", &"slide"])
+optional = true
+
+[sub_resource type="Resource" id="Resource_1vjwy"]
+script = ExtResource("2_q6wys")
+side = 3
+position = Vector2i(0, 0)
+key_choices = Array[StringName]([&"neutral", &"dash", &"double_jump", &"super_jump", &"dive", &"glide", &"slide"])
+optional = true
+
+[sub_resource type="Resource" id="Resource_31pj1"]
+script = ExtResource("4_krwkf")
+key_set = ExtResource("3_nk5h4")
+size = Vector2i(1, 3)
+edges = Array[ExtResource("2_q6wys")]([SubResource("Resource_nyaqa"), SubResource("Resource_a5mlq"), SubResource("Resource_1vjwy")])
+metadata/_custom_type_script = "uid://ca2dfl5s0wo5o"
+
+[node name="TowerBottom3" type="Node2D"]
+script = ExtResource("1_1vjwy")
+room_profile = SubResource("Resource_31pj1")

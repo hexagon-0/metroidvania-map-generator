@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://cr87l6vu60fbo"]
+
+[ext_resource type="Script" uid="uid://t0mja7ora1v8" path="res://addons/proc_mv/room_profile/room_instance.gd" id="1_gihbu"]
+[ext_resource type="Script" uid="uid://dboui063mniml" path="res://scenes/room_test/edge_profile.gd" id="2_sbc24"]
+[ext_resource type="Resource" uid="uid://bl2mcvnkm8yap" path="res://resources/key_set.tres" id="3_dkwp2"]
+[ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scenes/room_test/room_profile.gd" id="4_8g8vp"]
+
+[sub_resource type="Resource" id="Resource_jga4u"]
+script = ExtResource("2_sbc24")
+side = 0
+position = Vector2i(1, 0)
+key_choices = Array[StringName]([&"neutral", &"dash", &"double_jump", &"super_jump", &"dive", &"glide", &"slide"])
+optional = true
+
+[sub_resource type="Resource" id="Resource_nrh81"]
+script = ExtResource("2_sbc24")
+side = 2
+position = Vector2i(0, 0)
+key_choices = Array[StringName]([&"neutral", &"dash", &"double_jump", &"super_jump", &"dive", &"glide", &"slide"])
+optional = true
+
+[sub_resource type="Resource" id="Resource_gihbu"]
+script = ExtResource("2_sbc24")
+side = 3
+position = Vector2i(0, 0)
+key_choices = Array[StringName]([&"neutral", &"dash", &"double_jump", &"super_jump", &"dive", &"glide", &"slide"])
+optional = true
+
+[sub_resource type="Resource" id="Resource_sbc24"]
+script = ExtResource("2_sbc24")
+side = 3
+position = Vector2i(1, 0)
+key_choices = Array[StringName]([&"slide", &"glide", &"dive", &"super_jump", &"double_jump", &"dash", &"neutral"])
+optional = true
+
+[sub_resource type="Resource" id="Resource_jtdwx"]
+script = ExtResource("4_8g8vp")
+key_set = ExtResource("3_dkwp2")
+size = Vector2i(2, 1)
+edges = Array[ExtResource("2_sbc24")]([SubResource("Resource_jga4u"), SubResource("Resource_nrh81"), SubResource("Resource_gihbu"), SubResource("Resource_sbc24")])
+metadata/_custom_type_script = "uid://ca2dfl5s0wo5o"
+
+[node name="HCorridor2" type="Node2D"]
+script = ExtResource("1_gihbu")
+room_profile = SubResource("Resource_jtdwx")
