@@ -9,7 +9,7 @@ signal screenful_clicked(screenful: Vector2i)
 @export var outline_width: int = 2
 @export var anchor: Vector2 = Vector2(0.5, 0.5)
 
-var map: MapGenerator.Map:
+var map: OldMapGenerator.Map:
 	set(value):
 		map = value
 		queue_redraw()
@@ -18,7 +18,7 @@ var _key_list_origin: Vector2 = Vector2(400.0, 20.0)
 var _offset: Vector2:
 	get:
 		return Vector2(map.size) * anchor
-var _selected_region: MapGenerator.BspNode
+var _selected_region: OldMapGenerator.BspNode
 var _adjacent_regions: Array[Rect2i]
 var _overlay: bool = false
 
@@ -66,7 +66,7 @@ func _on_window_focus_exited() -> void:
 	queue_redraw()
 
 
-func _set_selected_region(region: MapGenerator.BspNode) -> void:
+func _set_selected_region(region: OldMapGenerator.BspNode) -> void:
 	if _selected_region != region:
 		_selected_region = region
 		if _selected_region != null:

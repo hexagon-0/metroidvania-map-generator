@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dur3ycrqfb7xb"]
+[gd_scene load_steps=30 format=3 uid="uid://dur3ycrqfb7xb"]
 
 [ext_resource type="Script" uid="uid://dpa2o5x025oa" path="res://scenes/room_test/room_test.gd" id="1_3p6pu"]
 [ext_resource type="Script" uid="uid://03hclmhrjtqf" path="res://scenes/room_test/room_visual.gd" id="2_1487q"]
@@ -6,7 +6,17 @@
 [ext_resource type="Script" uid="uid://dboui063mniml" path="res://scenes/room_test/edge_profile.gd" id="3_0pl7j"]
 [ext_resource type="PackedScene" uid="uid://c87ow3nssv1cn" path="res://scenes/rooms/finalizers/finalizer_1x1.tscn" id="3_nclto"]
 [ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scenes/room_test/room_profile.gd" id="4_1qvlg"]
+[ext_resource type="Script" uid="uid://ctji482a0clyr" path="res://scenes/room_test/map_generator.gd" id="4_f22yf"]
 [ext_resource type="PackedScene" uid="uid://djya21tijqj7m" path="res://scenes/room_test/visualizer_ui.tscn" id="6_o6no7"]
+
+[sub_resource type="Resource" id="Resource_byds8"]
+script = ExtResource("4_f22yf")
+key_ordering = ExtResource("2_ahcck")
+room_pool_search_mode = "Directory"
+room_pool_array = Array[PackedScene]([])
+room_pool_directory = "res://scenes/rooms"
+finalizer_room_array = Array[PackedScene]([ExtResource("3_nclto")])
+metadata/_custom_type_script = "uid://ctji482a0clyr"
 
 [sub_resource type="Resource" id="Resource_ybnmi"]
 script = ExtResource("3_0pl7j")
@@ -139,10 +149,7 @@ edges = Array[ExtResource("3_0pl7j")]([SubResource("Resource_q66or")])
 
 [node name="RoomTest" type="Node2D"]
 script = ExtResource("1_3p6pu")
-key_ordering = ExtResource("2_ahcck")
-room_pool_search_mode = "Directory"
-room_pool_directory = "res://scenes/rooms"
-finalizer_room_array = Array[PackedScene]([ExtResource("3_nclto")])
+map_generator = SubResource("Resource_byds8")
 
 [node name="Pool" type="Node2D" parent="."]
 
@@ -183,12 +190,10 @@ profile = SubResource("Resource_hxu50")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VisualizerUi" parent="CanvasLayer" node_paths=PackedStringArray("room_test") instance=ExtResource("6_o6no7")]
+[node name="VisualizerUi" parent="CanvasLayer" instance=ExtResource("6_o6no7")]
 unique_name_in_owner = true
-room_test = NodePath("../..")
 
 [node name="ResourcePreloader" type="ResourcePreloader" parent="."]
 
-[connection signal="generation_started" from="." to="CanvasLayer/VisualizerUi" method="initialize"]
 [connection signal="generate_pressed" from="CanvasLayer/VisualizerUi" to="." method="_on_visualizer_ui_generate_pressed"]
 [connection signal="screenful_clicked" from="CanvasLayer/VisualizerUi" to="." method="_on_visualizer_ui_screenful_clicked"]

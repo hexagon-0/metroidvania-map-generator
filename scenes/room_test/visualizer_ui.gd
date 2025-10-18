@@ -10,7 +10,6 @@ signal generate_pressed
 enum WidgetState { EVALUATION, ACCEPTED, REJECTED }
 
 
-const RoomTest = preload("res://scenes/room_test/room_test.gd")
 const SCREENFUL_SIZE := Vector2(16, 8)
 const WALL_WIDTH := 2.0
 const DEFAULT_ROOM_STROKE := Color.DARK_SLATE_BLUE
@@ -20,7 +19,7 @@ const DEFAULT_BLUEPRINT_ALPHA := 0.6
 const DEFAULT_ACCEPT_COLOR := Color(Color.CHARTREUSE, 0.5)
 const DEFAULT_REJECT_COLOR := Color(Color.CRIMSON, 0.5)
 
-@export var room_test: RoomTest
+var rooms: Array[Room]
 
 var _run_to_completion: bool = false
 #var _rooms: Array[Room]
@@ -63,8 +62,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _draw() -> void:
-	#for r in _rooms:
-	for r: Room in room_test._rooms:
+	for r: Room in rooms:
 		if _overlay:
 			var fill := _get_key_color(r.region_key)
 			var stroke := fill.darkened(0.2)
@@ -113,9 +111,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		#_zoom -= 1
 
 
-func initialize() -> void:
+func initialize(p_rooms: Array[Room]) -> void:
 	_run_to_completion = false
 	_room_blueprints = []
+	rooms = p_rooms
 
 
 func step_or_complete() -> Variant:

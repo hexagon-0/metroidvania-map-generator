@@ -1,4 +1,4 @@
-class_name MapGenerator
+class_name OldMapGenerator
 extends Node
 
 
