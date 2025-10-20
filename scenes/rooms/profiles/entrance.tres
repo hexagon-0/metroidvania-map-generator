@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RoomProfile" load_steps=5 format=3 uid="uid://cypt6c4xc5nul"]
 
-[ext_resource type="Script" uid="uid://dboui063mniml" path="res://scenes/room_test/edge_profile.gd" id="1_0hs1b"]
-[ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scenes/room_test/room_profile.gd" id="2_ee8h8"]
+[ext_resource type="Script" uid="uid://dboui063mniml" path="res://scripts/edge_profile.gd" id="1_0hs1b"]
+[ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scripts/room_profile.gd" id="2_ee8h8"]
 [ext_resource type="Resource" uid="uid://bl2mcvnkm8yap" path="res://resources/key_set.tres" id="2_w5jq7"]
 
 [sub_resource type="Resource" id="Resource_ee8h8"]

@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dpa2o5x025oa" path="res://scenes/room_test/room_test.gd" id="1_3p6pu"]
 [ext_resource type="Script" uid="uid://03hclmhrjtqf" path="res://scenes/room_test/room_visual.gd" id="2_1487q"]
 [ext_resource type="Resource" uid="uid://d34810v8glq1l" path="res://resources/key_ordering.tres" id="2_ahcck"]
-[ext_resource type="Script" uid="uid://dboui063mniml" path="res://scenes/room_test/edge_profile.gd" id="3_0pl7j"]
+[ext_resource type="Script" uid="uid://dboui063mniml" path="res://scripts/edge_profile.gd" id="3_0pl7j"]
 [ext_resource type="PackedScene" uid="uid://c87ow3nssv1cn" path="res://scenes/rooms/finalizers/finalizer_1x1.tscn" id="3_nclto"]
-[ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scenes/room_test/room_profile.gd" id="4_1qvlg"]
-[ext_resource type="Script" uid="uid://ctji482a0clyr" path="res://scenes/room_test/map_generator.gd" id="4_f22yf"]
+[ext_resource type="Script" uid="uid://ca2dfl5s0wo5o" path="res://scripts/room_profile.gd" id="4_1qvlg"]
+[ext_resource type="Script" uid="uid://ctji482a0clyr" path="res://scripts/map_generator.gd" id="4_f22yf"]
 [ext_resource type="PackedScene" uid="uid://djya21tijqj7m" path="res://scenes/room_test/visualizer_ui.tscn" id="6_o6no7"]
 
 [sub_resource type="Resource" id="Resource_byds8"]
