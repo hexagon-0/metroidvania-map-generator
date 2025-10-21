@@ -178,10 +178,10 @@ func generate(region_length: int, initial_room_template: RoomProfile = null) -> 
 					i += 1
 
 	await viz.message("Generation finished")
-	print("Generation successful" if success else "Generation failed")
-	print("Total rooms: %s" % [rooms.size()])
-	print("Open edges: %s" % [_available_edges.size()])
-	print("Final key order: %s" % [_keys_so_far])
+	#print("Generation successful" if success else "Generation failed")
+	#print("Total rooms: %s" % [rooms.size()])
+	#print("Open edges: %s" % [_available_edges.size()])
+	#print("Final key order: %s" % [_keys_so_far])
 	generation_ended.emit()
 	return success
 
