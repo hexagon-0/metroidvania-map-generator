@@ -35,6 +35,7 @@ func _run(region_size: int, generations: int = 1000) -> void:
 		var start_time := Time.get_ticks_usec()
 		while not await map_generator.generate(region_size):
 			average_attempts += 1.0
+		average_attempts += 1.0
 		average_time_elapsed += Time.get_ticks_usec() - start_time
 
 	average_attempts /= generations
